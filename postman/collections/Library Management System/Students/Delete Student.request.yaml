@@ -1,0 +1,5 @@
+$kind: http-request
+name: Delete Student
+method: DELETE
+url: '{{baseUrl}}/api/v1/students/{{student_id}}'
+order: 4000

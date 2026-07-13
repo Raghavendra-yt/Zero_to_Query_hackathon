@@ -1,0 +1,5 @@
+$kind: http-request
+name: Renew Book
+method: POST
+url: '{{baseUrl}}/api/v1/transactions/renew/{{transaction_id}}'
+order: 4000

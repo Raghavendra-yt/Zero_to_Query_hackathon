@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Overdue Report
+method: GET
+url: '{{baseUrl}}/api/v1/dashboard/overdue'
+order: 2000

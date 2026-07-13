@@ -1,0 +1,9 @@
+$kind: http-request
+name: Get Student Fines
+method: GET
+url: '{{baseUrl}}/api/v1/students/{{student_id}}/fines'
+order: 6000
+queryParams:
+  - key: status
+    value: ''
+    disabled: true

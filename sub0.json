@@ -1,0 +1,71 @@
+{
+  "project": "library-management-system",
+  "version": "1.0.0",
+  "database": "postgresql",
+  "auth": {
+    "provider": "jwt",
+    "secret": "${JWT_SECRET}",
+    "expiration": "86400"
+  },
+  "models": {
+    "User": {
+      "fields": {
+        "id": { "type": "uuid", "primary": true, "default": "uuid_generate_v4()" },
+        "name": { "type": "string", "required": true },
+        "email": { "type": "string", "unique": true, "required": true },
+        "password": { "type": "string", "required": true, "hashed": true },
+        "role": { "type": "string", "default": "Librarian" },
+        "created_at": { "type": "datetime", "default": "now()" }
+      }
+    },
+    "Student": {
+      "fields": {
+        "student_id": { "type": "string", "primary": true },
+        "first_name": { "type": "string", "required": true },
+        "last_name": { "type": "string", "required": true },
+        "email": { "type": "string", "required": true },
+        "phone": { "type": "string" },
+        "department": { "type": "string" },
+        "class_name": { "type": "string" },
+        "registration_number": { "type": "string" },
+        "status": { "type": "string", "default": "Active" },
+        "created_at": { "type": "datetime", "default": "now()" }
+      }
+    },
+    "Book": {
+      "fields": {
+        "book_id": { "type": "integer", "primary": true, "autoIncrement": true },
+        "isbn": { "type": "string", "unique": true },
+        "title": { "type": "string", "required": true },
+        "author": { "type": "string", "required": true },
+        "category": { "type": "string", "default": "General" },
+        "total_copies": { "type": "integer", "default": 1 },
+        "available_copies": { "type": "integer", "default": 1 },
+        "book_image": { "type": "string" },
+        "created_at": { "type": "datetime", "default": "now()" }
+      }
+    },
+    "Transaction": {
+      "fields": {
+        "transaction_id": { "type": "integer", "primary": true, "autoIncrement": true },
+        "student_id": { "type": "string", "references": "Student.student_id", "required": true },
+        "book_id": { "type": "integer", "references": "Book.book_id", "required": true },
+        "issue_date": { "type": "datetime", "default": "now()" },
+        "due_date": { "type": "datetime", "required": true },
+        "return_date": { "type": "datetime" },
+        "status": { "type": "string", "default": "Active" }
+      }
+    },
+    "Fine": {
+      "fields": {
+        "fine_id": { "type": "integer", "primary": true, "autoIncrement": true },
+        "transaction_id": { "type": "integer", "references": "Transaction.transaction_id" },
+        "student_id": { "type": "string", "references": "Student.student_id", "required": true },
+        "amount": { "type": "float", "required": true },
+        "payment_status": { "type": "string", "default": "Unpaid" },
+        "payment_date": { "type": "datetime" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

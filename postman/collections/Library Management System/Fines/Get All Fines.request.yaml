@@ -1,0 +1,9 @@
+$kind: http-request
+name: Get All Fines
+method: GET
+url: '{{baseUrl}}/api/v1/fines'
+order: 1000
+queryParams:
+  - key: status
+    value: ''
+    disabled: true

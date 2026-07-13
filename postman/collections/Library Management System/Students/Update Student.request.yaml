@@ -1,0 +1,20 @@
+$kind: http-request
+name: Update Student
+method: PUT
+url: '{{baseUrl}}/api/v1/students/{{student_id}}'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "1234567890",
+      "department": "Computer Science",
+      "class_year": "2024",
+      "status": "active"
+    }

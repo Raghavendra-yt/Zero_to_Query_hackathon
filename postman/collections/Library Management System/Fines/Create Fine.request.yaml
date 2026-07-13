@@ -1,0 +1,17 @@
+$kind: http-request
+name: Create Fine
+method: POST
+url: '{{baseUrl}}/api/v1/fines'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "student_id": "{{student_id}}",
+      "amount": 10.00,
+      "category": "overdue",
+      "notes": "Overdue fine for borrowed book"
+    }

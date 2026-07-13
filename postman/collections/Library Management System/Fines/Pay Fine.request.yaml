@@ -1,0 +1,5 @@
+$kind: http-request
+name: Pay Fine
+method: POST
+url: '{{baseUrl}}/api/v1/fines/{{fine_id}}/pay'
+order: 3000

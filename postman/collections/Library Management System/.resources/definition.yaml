@@ -1,0 +1,9 @@
+$kind: collection
+name: Library Management System
+description: |-
+  A Postman collection for the Library Management System Flask API.
+  Organized into resource groups: Health, Books, Students, Transactions, Fines, and Dashboard.
+variables:
+  - key: baseUrl
+    value: 'http://127.0.0.1:5000'
+    description: Base URL for the Library Management System API

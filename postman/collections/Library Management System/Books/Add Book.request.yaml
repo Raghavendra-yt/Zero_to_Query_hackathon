@@ -1,0 +1,19 @@
+$kind: http-request
+name: Add Book
+method: POST
+url: '{{baseUrl}}/api/v1/books'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "isbn": "978-3-16-148410-0",
+      "title": "Sample Book Title",
+      "author": "Author Name",
+      "total_copies": 5,
+      "category": "Fiction",
+      "book_image": ""
+    }

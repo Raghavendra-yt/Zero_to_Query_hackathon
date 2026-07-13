@@ -1,0 +1,16 @@
+$kind: http-request
+name: Checkout Book
+method: POST
+url: '{{baseUrl}}/api/v1/transactions/checkout'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "student_id": "{{student_id}}",
+      "book_id": "{{book_id}}",
+      "due_date": "2025-08-01"
+    }

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Return Book
+method: POST
+url: '{{baseUrl}}/api/v1/transactions/return/{{transaction_id}}'
+order: 3000

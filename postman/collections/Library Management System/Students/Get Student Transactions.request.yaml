@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Student Transactions
+method: GET
+url: '{{baseUrl}}/api/v1/students/{{student_id}}/transactions'
+order: 5000

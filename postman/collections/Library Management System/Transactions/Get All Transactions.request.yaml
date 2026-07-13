@@ -1,0 +1,9 @@
+$kind: http-request
+name: Get All Transactions
+method: GET
+url: '{{baseUrl}}/api/v1/transactions'
+order: 1000
+queryParams:
+  - key: status
+    value: ''
+    disabled: true

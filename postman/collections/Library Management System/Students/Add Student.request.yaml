@@ -1,0 +1,21 @@
+$kind: http-request
+name: Add Student
+method: POST
+url: '{{baseUrl}}/api/v1/students'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "student_id": "STU001",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "phone": "1234567890",
+      "department": "Computer Science",
+      "class_year": "2024",
+      "status": "active"
+    }
