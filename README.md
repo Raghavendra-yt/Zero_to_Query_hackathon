@@ -6,7 +6,7 @@ A modern, full-stack **Library Management System** built for the **Zero to Query
 
 ---
 
-## 🏛️ Hackathon Architecture
+## 🏛️ Architecture Integration (Sub0 & LingoQL)
 
 ![Library Management System Architecture](./public/architecture.png)
 
