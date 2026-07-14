@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vite",
     "dev:full": "vite",
-    "start": "export PATH=$PATH:/root/.local/bin:/usr/local/bin:/usr/bin; python3 -m gunicorn --bind 0.0.0.0:${PORT:-8080} backend.app:app || python3 backend/app.py || python backend/app.py || vite preview --host 0.0.0.0 --port ${PORT:-8080}",
+    "start": "node backend/server.cjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -20,9 +20,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "framer-motion": "^12.40.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7",
     "lucide-react": "^1.18.0",
     "motion": "^12.41.0",
     "react": "^19.2.6",
