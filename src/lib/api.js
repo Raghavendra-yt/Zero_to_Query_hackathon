@@ -9,7 +9,7 @@ const BASE_URL = import.meta.env.VITE_SUB0_API_URL
   ? (import.meta.env.VITE_SUB0_API_URL.endsWith('/api/v1') 
       ? import.meta.env.VITE_SUB0_API_URL.replace(/\/$/, '') 
       : `${import.meta.env.VITE_SUB0_API_URL.replace(/\/$/, '')}/api/v1`)
-  : 'https://us-east-ep1ytwk-m1.lingoql.com/api/v1';
+  : 'https://us-east-ldqi7xd-m1.lingoql.com/api/v1';
 // ---------------------------------------------------------------------------
 // Internal helper — makes an HTTP request and unwraps the standard envelope
 // { status: "success", data: ... } | { status: "error", message: ... }
