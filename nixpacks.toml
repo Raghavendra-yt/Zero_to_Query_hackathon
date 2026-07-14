@@ -11,4 +11,4 @@ cmds = ["npm install", "pip install -r backend/requirements.txt"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "gunicorn --bind 0.0.0.0:${PORT:-8080} backend.app:app"
+cmd = "python3 -m gunicorn --bind 0.0.0.0:${PORT:-8080} backend.app:app || gunicorn --bind 0.0.0.0:${PORT:-8080} backend.app:app"
