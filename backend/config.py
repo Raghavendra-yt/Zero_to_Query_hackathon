@@ -24,11 +24,13 @@ DIST_DIR: Final[str] = os.path.abspath(os.path.join(BASE_DIR, "..", "dist"))
 class Config:
     """Flask application configuration."""
 
-    # Database
-    SQLALCHEMY_DATABASE_URI: str = os.environ.get(
-        "DATABASE_URL", 
-        "mysql+pymysql://root:@localhost:3306/library_db"
-    )
+    _raw_db_uri: str = os.environ.get("DATABASE_URL", "")
+    if _raw_db_uri.startswith("postgres://"):
+        _raw_db_uri = _raw_db_uri.replace("postgres://", "postgresql://", 1)
+    elif not _raw_db_uri:
+        _raw_db_uri = f"sqlite:///{os.path.join(BASE_DIR, 'library.db')}"
+
+    SQLALCHEMY_DATABASE_URI: str = _raw_db_uri
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = False
     SECRET_KEY: str = os.environ.get("SECRET_KEY", "secure-library-secret-key-998877")
 
