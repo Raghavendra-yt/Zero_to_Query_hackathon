@@ -302,7 +302,7 @@ export default function IssueReturnForm({ defaultTab = 'issue', prefilledStudent
     setSection(student.section || 'A');
     setContactPhone(student.contact || '');
     setStudentRollNumber(student.id || '');
-    setStudentEmail(student.email || `${student.name.toLowerCase().replace(/\s+/g, '')}@gowthami.edu.in`);
+    setStudentEmail(student.email || `${student.name.toLowerCase().replace(/\s+/g, '')}@library.edu`);
     setStudentClassName('');
     setStudentClassSection('');
     setStudentAge('');
@@ -1111,7 +1111,7 @@ export default function IssueReturnForm({ defaultTab = 'issue', prefilledStudent
                           placeholder="Auto-filled based on transaction" 
                           readOnly 
                           type="email"
-                          value={selectedTransaction ? (fullStudent?.email || `${selectedTransaction.student_name.toLowerCase().replace(/\s+/g, '')}@gowthami.edu.in`) : ''}
+                          value={selectedTransaction ? (fullStudent?.email || `${selectedTransaction.student_name.toLowerCase().replace(/\s+/g, '')}@library.edu`) : ''}
                         />
                       </div>
                     </div>

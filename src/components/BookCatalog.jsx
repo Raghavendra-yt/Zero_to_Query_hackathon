@@ -1142,7 +1142,7 @@ export default function BookCatalog({ defaultCategory = '', addBookTrigger = 0, 
               </div>
 
               <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed m-0 mb-4">
-                Are you sure you want to delete <strong className="text-on-surface">"{selectedBook.title}"</strong> from the Sri Gowthami library holdings? This action is irreversible.
+                Are you sure you want to delete <strong className="text-on-surface">"{selectedBook.title}"</strong> from the library catalog? This action is irreversible.
               </p>
 
               <div className="flex gap-2.5">

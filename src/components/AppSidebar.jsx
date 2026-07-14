@@ -220,7 +220,7 @@ export default function AppSidebar({ activeTab, setActiveTab, onNewEntry, mobile
                 className="text-left overflow-hidden"
               >
                 <h1 className="font-headline-sm text-[14px] leading-tight font-bold text-slate-800 dark:text-slate-200 m-0 whitespace-nowrap">
-                  Sri Gowthami Educational
+                  Central Library
                 </h1>
                 <p className="font-body-sm text-[11px] text-slate-500 dark:text-slate-400 m-0 mt-0.5 whitespace-nowrap">
                   Admin Portal
