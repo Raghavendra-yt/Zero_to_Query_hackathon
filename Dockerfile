@@ -28,9 +28,9 @@ COPY backend/ ./backend/
 # Set environment variables
 ENV PORT=8080
 ENV FLASK_APP=backend/app.py
-ENV PYTHONPATH=/app/backend
+ENV PYTHONPATH=/app:/app/backend
 
 EXPOSE 8080
 
 # Run Flask server via Gunicorn
-CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 backend.app:app
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-8080} --workers 1 --threads 8 --timeout 120 backend.app:app"]
