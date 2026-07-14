@@ -1,0 +1,14 @@
+[providers]
+providers = ["python", "node"]
+
+[phases.setup]
+nixPkgs = ["python311", "python311Packages.pip"]
+
+[phases.install]
+cmds = ["npm install", "pip install -r backend/requirements.txt"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "gunicorn --bind 0.0.0.0:${PORT:-8080} backend.app:app"
